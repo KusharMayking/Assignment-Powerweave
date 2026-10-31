@@ -1,6 +1,6 @@
 import { useId, useState, type FormEvent } from 'react'
 import { ArrowRightIcon, MailIcon } from './Icons'
-import './NewsletterForm.css'
+import '../styles/components/NewsletterForm.css'
 
 // good enough for a signup form, the backend should validate properly anyway
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/

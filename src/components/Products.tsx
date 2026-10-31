@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './Products.css'
+import '../styles/components/Products.css'
 
 export interface Product {
   id: number

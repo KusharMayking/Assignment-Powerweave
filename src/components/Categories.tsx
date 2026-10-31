@@ -1,5 +1,5 @@
 import Carousel from './Carousel'
-import './Categories.css'
+import '../styles/components/Categories.css'
 
 const CATEGORIES = [
   {

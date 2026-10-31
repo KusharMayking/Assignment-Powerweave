@@ -1,5 +1,5 @@
 import Carousel from './Carousel'
-import './Offers.css'
+import '../styles/components/Offers.css'
 
 const OFFERS = [
   {

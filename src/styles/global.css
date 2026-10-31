@@ -1,5 +1,5 @@
-/* Global: variables, reset and a few shared classes.
-   Everything else lives next to its component. */
+/* Global: variables, reset and shared classes.
+   Component styles live in styles/components/. */
 
 :root {
   /* colors */

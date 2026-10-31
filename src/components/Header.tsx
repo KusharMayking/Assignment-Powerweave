@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CartIcon, ChevronDownIcon, CloseIcon, HeartIcon, MenuIcon, SearchIcon, UserIcon } from './Icons'
-import './Header.css'
+import '../styles/components/Header.css'
 
 // hasMenu just shows the chevron for now, dropdowns aren't built yet
 const NAV_ITEMS = [

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeftIcon, ArrowRightIcon } from './Icons'
-import './Hero.css'
+import '../styles/components/Hero.css'
 
 const SLIDES = [
   {

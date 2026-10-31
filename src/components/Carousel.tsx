@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { ArrowLeftIcon, ArrowRightIcon } from './Icons'
-import './Carousel.css'
+import '../styles/components/Carousel.css'
 
 interface CarouselProps {
   label: string

@@ -1,6 +1,6 @@
 import NewsletterForm from './NewsletterForm'
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from './Icons'
-import './Footer.css'
+import '../styles/components/Footer.css'
 
 const LINK_GROUPS = [
   { title: 'Categories', links: ['Apparel', 'Bags', 'Drinkware', 'Lanyards', 'Office', 'Tech', 'Gifts', 'Tradeshow'] },

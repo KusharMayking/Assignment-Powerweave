@@ -13,10 +13,11 @@ npm run preview   # serve the build
 
 ## Structure
 
-- `src/index.css` - CSS variables, reset, shared classes (`.container`, `.btn`, `.section`, slider buttons)
+- `src/styles/global.css` - CSS variables, reset, shared classes (`.container`, `.btn`, `.section`, slider buttons)
+- `src/styles/components/` - one CSS file per component, named to match its component (for example, `Header.css`)
 - `src/App.tsx` - page layout
 - `src/data/products.json` - product list for the Featured Products cards
-- `src/components/` - one component per section, each with its own .css file
+- `src/components/` - React components, each importing its stylesheet from `src/styles/components/`
   - `Header` - sticky header, hamburger menu, search, cart/wishlist/account icons
   - `Hero` - 4 slide banner with arrows, dots and autoplay
   - `Carousel` - scroll-snap slider shared by Categories and Offers
