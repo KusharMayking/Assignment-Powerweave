@@ -1,0 +1,99 @@
+/* auto-fill grid, gives 2 / 3 / 4 columns on its own */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+  gap: var(--space-3);
+}
+
+@media (min-width: 48em) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: var(--space-4);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card__media {
+  position: relative;
+  display: block;
+}
+
+.card__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.card__badge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.card__sku {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.card__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.card__name a:hover {
+  color: var(--color-primary);
+}
+
+.card__price {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.card__price strong {
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+/* loading placeholder */
+.card--skeleton {
+  aspect-ratio: 3 / 4;
+  background: var(--color-border);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--skeleton { animation: none; }
+}
+
+.products__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
