@@ -1,57 +1,87 @@
-# Online Shopping - landing page
+# Online Shopping
 
-Responsive e-commerce landing page. React + TypeScript + Vite, plain CSS (no UI framework).
+A responsive online shopping landing page built with React, TypeScript and Vite.
 
-## Setup
+## Getting Started
 
+First, install the project dependencies:
+
+```bash
+npm ci
 ```
-npm install
-npm run dev       # localhost:5173
-npm run build     # output in dist/
-npm run preview   # serve the build
+
+Then, run the development server:
+
+```bash
+npm run dev   # development server
 ```
 
-## Structure
+Open [http://localhost:5173](http://localhost:5173) in your browser to see the application.
 
-- `src/styles/global.css` - CSS variables, reset, shared classes (`.container`, `.btn`, `.section`, slider buttons)
-- `src/styles/components/` - one CSS file per component, named to match its component (for example, `Header.css`)
-- `src/App.tsx` - page layout
-- `src/data/products.json` - product list for the Featured Products cards
-- `src/components/` - React components, each importing its stylesheet from `src/styles/components/`
-  - `Header` - sticky header, hamburger menu, search, cart/wishlist/account icons
-  - `Hero` - 4 slide banner with arrows, dots and autoplay
-  - `Carousel` - scroll-snap slider shared by Categories and Offers
-  - `Categories`, `Products`, `Offers`
-  - `NewsletterForm` - email input with validation, used in the footer
-  - `Footer` - newsletter strip, link columns, contact, social
-  - `Icons` - inline svg icons
+You can start editing the page by modifying the files inside the `src` directory. The browser will automatically refresh when you make changes.
 
-Breakpoints are mobile first: 40em, 48em and 64em.
+## Project Structure
 
-## Notes on the assignment
+The project is organized into reusable components and feature-based folders:
 
-**Header**
-- hamburger toggles the nav on mobile (`aria-expanded`, Esc closes it)
-- search bar wraps to a full width row under the logo on small screens, account icon is hidden there
-- logo text and icon scale with `clamp()`
+- `src/components/` – Common components such as buttons, carousels and containers.
+- `src/features/` – Header, footer, newsletter and product-related functionality.
+- `src/layouts/` – Main page layout.
+- `src/pages/` – Home page and its sections.
+- `src/assets/` – Icons and other assets.
+- `src/styles/` – Global styles, CSS variables and utilities.
+- `src/utils/` – Reusable helper functions.
 
-**Footer**
-- newsletter strip, 3 link columns, contact and social icons all collapse to one column on phones
-- email field checks the format on submit and shows an inline error (`aria-invalid` + `role="alert"`)
+The project uses CSS Modules to keep component styles separate and easy to maintain.
 
-**Sections** - Hero, Top Categories, Featured Products, Offers
+## Available Scripts
 
-**Product cards** - loaded from `products.json` via a dynamic import with a short delay and a skeleton state, so it behaves like a fetch
+Run the following commands from the project directory:
 
-**Other**
-- semantic tags: header / nav / main / section / article / footer / address / figure
-- heading order h1 (hero) > h2 (sections) > h3 (product names)
-- flexbox + grid everywhere, no fixed widths or heights on layout
-- images use `max-width: 100%` / `object-fit: cover` with `aspect-ratio` instead of fixed heights
-- all buttons, links and inputs are at least 44px tall
-- rem / em / clamp for sizes, 1px only for borders
-- `loading="lazy"` on everything below the fold, hero image 1 is `fetchpriority="high"`
-- alt text on every image, visible focus ring, reduced-motion respected for the hero and skeleton
-- vite minifies css/js in the build
+```bash
+npm run dev
+```
+Starts the development server.
 
-Images are from Unsplash.
+```bash
+npm run build
+```
+Checks TypeScript and creates the production build in the `dist` folder.
+
+```bash
+npm run preview
+```
+Runs the production build locally.
+
+```bash
+npm run lint
+```
+Checks the code for linting issues.
+
+## Features
+
+- Responsive layout for desktop, tablet and mobile screens.
+- Mobile-friendly navigation with a collapsible menu.
+- Search bar with a toggle option on smaller screens.
+- Hero section with an automatic image slider.
+- Product cards loaded from local JSON data.
+- Categories and offers displayed using reusable carousels.
+- Newsletter form with email validation.
+- Reusable components and CSS Modules for styling.
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+- CSS Modules
+- HTML5
+- CSS3
+
+## Deployment
+
+The project is deployed using GitHub Pages. GitHub Actions automatically builds and deploys the application whenever changes are pushed to the `main` branch.
+
+You can view the live application here:
+
+[Online Shopping – Live Demo](https://kusharmayking.github.io/Assignment-Powerweave/)

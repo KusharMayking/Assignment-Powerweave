@@ -1,0 +1,235 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar {
+  display: none; /* desktop only */
+  background: var(--color-dark);
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2rem;
+}
+
+.topbar__links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.topbar__links a:hover {
+  text-decoration: underline;
+}
+
+.header__main {
+  display: grid;
+  grid-template-columns: var(--touch-target) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-1);
+  padding-block: var(--space-2);
+}
+
+.logo {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-dark);
+  font-size: clamp(0.85rem, 2.5vw, 1.25rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.logo__text {
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.logo__text strong {
+  display: block;
+}
+
+.logo__icon {
+  width: clamp(1.75rem, 5vw, 2.5rem);
+  height: auto;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.logo strong {
+  color: var(--color-primary);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__actions :global(.icon-btn) {
+  flex-shrink: 0;
+}
+
+/* not enough room for this on phones */
+.header__actions .header__account,
+.header__actions .header__wishlist {
+  display: none;
+}
+
+.header :global(.icon-btn) {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding-inline: 0.25rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.1rem;
+  text-align: center;
+}
+
+.search {
+  display: none;
+  grid-column: 1 / -1;
+  min-width: 0;
+  order: 10;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.search--open {
+  display: flex;
+}
+
+.search:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--touch-target);
+  padding-inline: var(--space-3);
+  border: 0;
+  background: transparent;
+}
+
+.search__input:focus-visible {
+  /* The rounded form supplies the focus indicator for both controls. */
+  outline: none;
+}
+
+.search__btn {
+  flex-shrink: 0;
+  border-radius: 999px;
+}
+
+.search__btn:focus-visible {
+  outline: none;
+  background: var(--color-bg-alt);
+}
+
+.nav {
+  display: none; /* toggled by the hamburger */
+  border-top: 1px solid var(--color-border);
+}
+
+.nav--open {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--touch-target);
+  padding: var(--space-2) 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__chevron {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* desktop */
+@media (min-width: 64em) {
+  .header__main {
+    grid-template-columns: auto minmax(12rem, 1fr) auto;
+    column-gap: var(--space-3);
+  }
+
+  .topbar {
+    display: block;
+  }
+
+  .header__main .header__toggle,
+  .header__actions .header__searchToggle,
+  .nav__mobile-only {
+    display: none;
+  }
+
+  .header__actions .header__account,
+  .header__actions .header__wishlist {
+    display: inline-flex;
+  }
+
+  .logo {
+    white-space: nowrap;
+  }
+
+  .logo__text strong {
+    display: inline;
+  }
+
+  .search {
+    display: flex;
+    grid-column: auto;
+    order: 0;
+    max-width: 30rem;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .nav__link {
+    gap: var(--space-1);
+    white-space: nowrap;
+  }
+}

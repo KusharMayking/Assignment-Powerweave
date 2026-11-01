@@ -1,0 +1,150 @@
+/* dot itself is small but the button is a full 44px tap target */
+.dots {
+  display: flex;
+  margin-top: var(--space-4);
+}
+
+.dot {
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dot::before {
+  content: '';
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: background-color 0.15s;
+}
+
+/* on top of photos */
+.dot--light::before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dot--active::before,
+.dot:hover::before {
+  background: var(--color-primary);
+}
+
+.hero {
+  position: relative;
+  min-height: clamp(18rem, 45vw, 32rem);
+  color: #fff;
+  background: var(--color-dark);
+  overflow: hidden;
+}
+
+/* slides are stacked, only the active one is visible */
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+
+.hero__slide--active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide { transition: none; }
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* gradient so the white text is readable on lighter photos */
+.hero__slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.15) 70%);
+}
+
+.hero__body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-6);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.75rem);
+  font-weight: 300;
+}
+
+/* arrows hidden on phones, dots are enough there */
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: none;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hero__arrow--prev { left: var(--space-3); }
+.hero__arrow--next { right: var(--space-3); }
+
+@media (min-width: 48em) {
+  .hero__arrow { display: inline-flex; }
+
+  .hero__content {
+    padding-inline: calc(var(--touch-target) + var(--space-4));
+  }
+}
+
+.hero__dots {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-2);
+  z-index: 2;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+@media (min-width: 64em) {
+  .hero__dots {
+    position: static;
+    transform: none;
+    /* Align the visible first dot with the button, retaining 44px hit areas. */
+    margin-left: calc((0.6rem - var(--touch-target)) / 2);
+  }
+}
