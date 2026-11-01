@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 export function useMobileMenu() {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  // esc closes the mobile menu
+  // Listen for Escape only while the menu is open.
   useEffect(() => {
     if (!menuOpen) return
     const onKey = (e: KeyboardEvent) => {

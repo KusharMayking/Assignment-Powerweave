@@ -24,8 +24,7 @@ export default function Testimonials() {
           <figcaption className={styles.author}>{TESTIMONIAL.author}</figcaption>
         </figure>
 
-        {/* The reference supplies one review. These dots reproduce its decoration;
-            they are not controls for additional, unavailable testimonials. */}
+        {/* Only one review is available, so these dots are decorative. */}
         <div className={styles.pagination} aria-hidden="true">
           {Array.from({ length: 5 }, (_, index) => (
             <span key={index} className={classNames(styles.dot, index === 1 && styles.activeDot)} />

@@ -10,8 +10,7 @@ interface CarouselProps {
   children: ReactNode
 }
 
-// Native scroll-snap track with prev/next buttons. Touch and trackpad
-// scrolling just work, the buttons only nudge scrollLeft by one card.
+// Keep native touch scrolling and move one card at a time with the arrow buttons.
 export default function Carousel({ label, itemsPerView, children }: CarouselProps) {
   const trackRef = useRef<HTMLUListElement>(null)
   const [atStart, setAtStart] = useState(true)
@@ -21,6 +20,7 @@ export default function Carousel({ label, itemsPerView, children }: CarouselProp
     const track = trackRef.current
     if (!track) return
     const update = () => {
+      // Allow a pixel of rounding error when checking the ends of the track.
       setAtStart(track.scrollLeft <= 1)
       setAtEnd(track.scrollLeft + track.clientWidth >= track.scrollWidth - 1)
     }

@@ -9,6 +9,7 @@ export function useProducts() {
   const [status, setStatus] = useState<ProductStatus>('loading')
 
   useEffect(() => {
+    // Ignore late results after this effect has been cleaned up.
     let active = true
     fetchProducts()
       .then((data) => {

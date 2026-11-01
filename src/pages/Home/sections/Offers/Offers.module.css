@@ -19,13 +19,23 @@
 
 .offer__caption {
   position: absolute;
-  inset: auto 0 0 0;
+  inset: auto var(--space-3) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+}
+
+.offer__details {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  padding: var(--space-4) var(--space-3) var(--space-3);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
-  color: #fff;
+  flex: 1 1 10rem;
+  min-width: 0;
 }
 
 .offer__title {
@@ -39,9 +49,7 @@
 }
 
 .offer__badge {
-  position: absolute;
-  right: var(--space-3);
-  bottom: var(--space-3);
+  flex-shrink: 0;
   padding: 0.5rem 0.9rem;
   border-radius: 0.25rem;
   background: var(--color-primary);

@@ -1,4 +1,4 @@
-/* auto-fill grid, gives 2 / 3 / 4 columns on its own */
+/* Fit as many cards as the available width allows, including one on narrow screens. */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));

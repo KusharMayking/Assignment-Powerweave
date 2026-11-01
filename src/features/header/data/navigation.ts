@@ -1,4 +1,4 @@
-// hasMenu just shows the chevron for now, dropdowns aren't built yet
+// hasMenu adds a chevron; dropdown panels are not implemented yet.
 export const NAV_ITEMS = [
   { label: '2025 New Products', hasMenu: false },
   { label: 'Apparel', hasMenu: true },

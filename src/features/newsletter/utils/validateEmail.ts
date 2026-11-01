@@ -1,4 +1,4 @@
-// good enough for a signup form, the backend should validate properly anyway
+// Basic format check only; this does not verify that the address exists.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 export function validateEmail(email: string): string {

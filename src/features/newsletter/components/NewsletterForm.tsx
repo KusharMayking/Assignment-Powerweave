@@ -13,7 +13,7 @@ export default function NewsletterForm() {
   }
 
   return (
-    // noValidate so the browser's own bubble doesn't show up over our message
+    // Show our validation message instead of the browser's default popup.
     <form className={styles.newsletter} onSubmit={handleSubmit} noValidate>
       <label htmlFor={`${id}-email`} className="sr-only">Email address</label>
       <div className={styles.newsletter__row}>

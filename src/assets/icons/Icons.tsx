@@ -1,7 +1,6 @@
 import type { SVGProps } from 'react'
 
-// Inline icons so they pick up currentColor. All aria-hidden, the
-// button/link around them has the label.
+// Icons inherit the surrounding text color; their buttons and links provide accessible labels.
 
 type IconProps = SVGProps<SVGSVGElement>
 
@@ -59,7 +58,6 @@ export const ArrowRightIcon = (p: IconProps) => (
   <svg {...base} {...p}><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
 )
 
-// social
 export const FacebookIcon = (p: IconProps) => (
   <svg {...base} fill="currentColor" stroke="none" {...p}>
     <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8z" />

@@ -32,7 +32,7 @@ export default function Hero() {
             aria-label={`${i + 1} of ${SLIDES.length}`}
             aria-hidden={!active}
           >
-            {/* first slide is above the fold so load it eagerly, lazy for the rest */}
+            {/* Prioritize the first image; later slides can load lazily. */}
             <img
               className={styles.hero__img}
               src={slide.image}

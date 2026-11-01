@@ -10,6 +10,7 @@ interface HeaderSearchProps {
 }
 
 export default function HeaderSearch({ open, inputRef, onKeyDown }: HeaderSearchProps) {
+  // Search is a UI placeholder until product filtering is connected.
   return (
     <form
       id="header-search"
